@@ -67,13 +67,13 @@ void Calculator::findParenthesis(std::string &input)
         {
             subExp = input.substr(i + 1);
             findParenthesis(subExp);
-            input = input.substr(0, i - 1) + subExp;
+            input = input.substr(0, i) + subExp;
         }
 
         else if (input[i] == ')')
         {
-            subExp = input.substr(0, i - 1);
-            temp = std::to_string(solveExpression(subExp));
+            subExp = input.substr(0, i);
+            temp = std::to_string((int)solveExpression(subExp));
             subExp = input.substr(i + 1);
             input = temp + subExp;
             return;
@@ -83,10 +83,10 @@ void Calculator::findParenthesis(std::string &input)
 
 double Calculator::solveExpression(std::string &input)
 {
+    findParenthesis(input);
+
     valueList.clear();
     operationList.clear();
-
-    findParenthesis(input);
 
     int val { 0 };
     char currentChar { ' ' };
@@ -111,17 +111,17 @@ double Calculator::solveExpression(std::string &input)
     while (!operationList.empty())
     {
 
-        for (double val : valueList)
-        {
-            std::cout << val << ", ";
-        }
-        std::cout << "\n";
+        // for (double val : valueList)
+        // {
+        //     std::cout << val << ", ";
+        // }
+        // std::cout << "\n";
 
-        for (char op : operationList)
-        {
-            std::cout << op << ", ";
-        }
-        std::cout << "\n";
+        // for (char op : operationList)
+        // {
+        //     std::cout << op << ", ";
+        // }
+        // std::cout << "\n";
 
         for (int i { 0 }; i < operationList.size(); i++)
         {
