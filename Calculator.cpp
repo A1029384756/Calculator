@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <iostream>
 
+enum class DecimalStates { IN_FRONT, AFTER };
+
 Calculator::Calculator()
 {
     //std::cout << "Calculator Initialized \n";
@@ -73,7 +75,7 @@ void Calculator::findParenthesis(std::string &input)
         else if (input[i] == ')')
         {
             subExp = input.substr(0, i);
-            temp = std::to_string((int)solveExpression(subExp));
+            temp = std::to_string(solveExpression(subExp));
             subExp = input.substr(i + 1);
             input = temp + subExp;
             return;
@@ -88,19 +90,42 @@ double Calculator::solveExpression(std::string &input)
     valueList.clear();
     operationList.clear();
 
-    int val { 0 };
+    double val { 0 };
+    int decimalPlaces { 1 };
     char currentChar { ' ' };
+    DecimalStates state = DecimalStates::IN_FRONT;
 
     for (int i = { 0 }; input[i]; i++)
     {
         currentChar = input[i];
         if (isdigit(currentChar))
         {
-            val = val * 10 + currentChar - '0';
+            switch (state)
+            {
+            case DecimalStates::IN_FRONT:
+                val = val * 10.0 + (double)(currentChar - '0');
+                break;
+
+            case DecimalStates::AFTER:
+                val = val + (double)(currentChar - '0') / (double)(10 * decimalPlaces);
+                decimalPlaces++;
+                break;
+            
+            default:
+                break;
+            }
+
+        }
+
+        else if (currentChar == '.')
+        {
+            state = DecimalStates::AFTER;
         }
 
         else 
         {
+            decimalPlaces = 1;
+            state = DecimalStates::IN_FRONT;
             valueList.push_back(val);
             operationList.push_back(currentChar);
             val = 0;
@@ -111,17 +136,17 @@ double Calculator::solveExpression(std::string &input)
     while (!operationList.empty())
     {
 
-        // for (double val : valueList)
-        // {
-        //     std::cout << val << ", ";
-        // }
-        // std::cout << "\n";
+        for (double val : valueList)
+        {
+            std::cout << val << ", ";
+        }
+        std::cout << "\n";
 
-        // for (char op : operationList)
-        // {
-        //     std::cout << op << ", ";
-        // }
-        // std::cout << "\n";
+        for (char op : operationList)
+        {
+            std::cout << op << ", ";
+        }
+        std::cout << "\n";
 
         for (int i { 0 }; i < operationList.size(); i++)
         {
