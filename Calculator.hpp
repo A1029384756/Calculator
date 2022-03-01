@@ -1,7 +1,11 @@
+#ifndef CALCULATOR_H
+#define CALCULATOR_H
+
 #include <string>
 #include <math.h>
 #include <map>
 #include <vector>
+#include <iostream>
 
 #define NO_OPERATOR '`'
 
@@ -24,3 +28,5 @@ class Calculator
     std::vector <char> operationList;
     std::vector <double> valueList;
 };
+
+#endif

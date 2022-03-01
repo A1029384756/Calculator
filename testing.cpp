@@ -20,7 +20,12 @@ int main() {
         {"subtraction", "2-3", -1.0}, 
         {"multiplication", "2*3", 6.0}, 
         {"division", "2/3", 0.66666666 },
-        {"parentheses", "2*(3+4)", 14.0}
+        {"parentheses", "2*(3+4)", 14.0},
+        {"layered parentheses", "2*(3*(4+5))", 54.0},
+        {"sets of parentheses", "2*(3+4)*(2+3)", 70.0},
+        {"exponents", "2^3", 8.0},
+        {"floating-point", "1.1+3.9", 5.0},
+        {"with spaces", "3.5 + 8.0", 11.5},
     };
 
 

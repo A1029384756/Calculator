@@ -1,19 +1,15 @@
 #include "Calculator.hpp"
-#include <stdio.h>
-#include <iostream>
 
 enum class DecimalStates { IN_FRONT, AFTER };
 
 Calculator::Calculator()
 {
-    //std::cout << "Calculator Initialized \n";
-    printf("Calculator Intitialized\n");
+    std::cout << "Calculator Intitialized\n";
 }
 
 Calculator::~Calculator()
 {
-    //std::cout << "Calculator Deleted\n";
-    printf("Calculator Deleted\n");
+    std::cout << "Calculator Deleted\n";
 }
 
 std::string Calculator::getResult()
@@ -116,6 +112,8 @@ double Calculator::solveExpression(std::string &input)
             }
 
         }
+
+        else if (currentChar == ' ') {/*Ignore spaces*/}
 
         else if (currentChar == '.')
         {
