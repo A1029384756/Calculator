@@ -183,3 +183,8 @@ double Calculator::expressionWrapper()
 {
     return solveExpression(inputExpression);
 }
+
+double Calculator::expressionWrapper(std::string &input)
+{
+    return solveExpression(input);
+}

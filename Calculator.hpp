@@ -17,6 +17,7 @@ class Calculator
     std::string getResult();
     void setInput(std::string &input);
     double expressionWrapper();
+    double expressionWrapper(std::string &input);
     double arithmetic(double val1, double val2, char operation);
     void findParenthesis(std::string &input);
     double solveExpression(std::string &input);
