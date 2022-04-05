@@ -133,18 +133,6 @@ double Calculator::solveExpression(std::string &input)
 
     while (!operationList.empty())
     {
-        // for (double val : valueList)
-        // {
-        //     std::cout << val << ", ";
-        // }
-        // std::cout << "\n";
-
-        // for (char op : operationList)
-        // {
-        //     std::cout << op << ", ";
-        // }
-        // std::cout << "\n";
-
         for (int i { 0 }; i < operationList.size(); i++)
         {
             char previousOperator;

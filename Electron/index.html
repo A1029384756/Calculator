@@ -1,0 +1,85 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href="index.css">
+    <title>Calculator</title>
+</head>
+<body>
+    <form>
+        <input type="text" class="input" id="calculator-input" oninput="this.value = this.value.replace(/[^0-9()^*/+-.]/, '')"></input>
+    </form>
+    <div class="buttons-container">
+        <div class="other-ops-container">
+            <button class="button grid-item other-operator" id="open-parentheses">
+                (
+            </button>
+            <button class="button grid-item other-operator" id="close-parentheses">
+                )
+            </button>
+            <button class="button grid-item other-operator" id="exponent">
+                ^
+            </button>
+            <button class="button grid-item other-operator" id="delete">
+                <-
+            </button>
+        </div>
+        <div class="nums-and-ops-containers">
+            <div class="nums-container">
+                <button class="button grid-item number" id="num7">
+                    7
+                </button>
+                <button class="button grid-item number" id="num8">
+                    8
+                </button>
+                <button class="button grid-item number" id="num9">
+                    9
+                </button>
+                <button class="button grid-item number" id="num4">
+                    4
+                </button>
+                <button class="button grid-item number" id="num5">
+                    5
+                </button>
+                <button class="button grid-item number" id="num6">
+                    6
+                </button>
+                <button class="button grid-item number" id="num1">
+                    1
+                </button>
+                <button class="button grid-item number" id="num2">
+                    2
+                </button>
+                <button class="button grid-item number" id="num3">
+                    3
+                </button>
+                <button class="button grid-item number" id="num0">
+                    0
+                </button>
+                <button class="button grid-item number" id="decimal">
+                    .
+                </button>
+                <button class="button grid-item enter" id="enter">
+                    ENTER
+                </button>
+            </div>
+            <div class ="operation-container">
+                <button class="button grid-item operation" id="add">
+                    +
+                </button>
+                <button class="button grid-item operation" id="subtract">
+                    -
+                </button>
+                <button class="button grid-item operation" id="multiply">
+                    *
+                </button>
+                <button class="button grid-item operation" id="divide">
+                    /
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="render.js"></script>
+</body>
+</html>

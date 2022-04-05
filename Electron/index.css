@@ -1,0 +1,63 @@
+:root {
+    --default-button-color: rgb(49, 58, 65);
+    --default-hover-color: rgb(48, 54, 59);
+    --default-clicked-color: rgb(44, 48, 51);
+    --default-text-color: rgb(247, 225, 235);
+}
+
+.button {
+    background-color: var(--default-button-color);
+    color: var(--default-text-color);
+    border: none;
+    border-radius: 8px;
+    padding: 30px;
+    margin: 3px;
+    font-size: large;
+}
+
+.button:hover {
+    background-color: var(--default-hover-color);
+    transition-duration: 250ms;
+}
+
+.button:active {
+    background-color: var(--default-clicked-color);
+    transition-duration: 250ms;
+}
+
+.buttons-container {
+    display: grid;
+    grid-template-rows: auto auto;
+}
+
+.other-ops-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    padding: 10px;
+}
+
+.nums-and-ops-containers {
+    align-items: center;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.nums-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+}
+
+.operation-container {
+    display: grid;
+    grid-template-columns: auto;
+}
+
+.input {
+    display: grid;
+    font-size: x-large;
+    border-radius: 8px;
+    padding: 20px;
+    height: 10vh;
+    width: 100%;
+}
