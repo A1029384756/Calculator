@@ -2,6 +2,8 @@
 **/Electron/node_modules
 **/Electron_WASM
 **/hello_world_wasm
+**/Electron/dist
 Calculator
 calc.js
 calc.wasm
+testing

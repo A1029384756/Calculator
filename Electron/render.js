@@ -97,7 +97,7 @@ divide.onclick = () => {
 //#endregion
 
 enter.onclick = () => {
-    console.log("SUBMITTED");
+    console.log("SUBMITTED (BUTTON)");
     textInput.value = Module.calculate(textInput.value);
 }
 

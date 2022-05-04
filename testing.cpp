@@ -26,6 +26,7 @@ int main() {
         {"exponents", "2^3", 8.0},
         {"floating-point", "1.1+3.9", 5.0},
         {"with spaces", "3.5 + 8.0", 11.5},
+        {"floating-point: multiple decimals", "1.113 * 2.3", 2.5599}
     };
 
 

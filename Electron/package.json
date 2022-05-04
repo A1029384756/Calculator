@@ -4,12 +4,21 @@
   "description": "An electron-based calculator with a c++ backend",
   "main": "index.js",
   "scripts": {
-    "test": "electron ."
+    "test": "electron .",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "linux": {
+      "target": [
+        "AppImage"
+      ]
+    }
   },
   "author": "Hayden Gray",
   "license": "ISC",
   "devDependencies": {
     "electron": "^17.1.2",
+    "electron-builder": "^23.0.3",
     "electron-reload": "^2.0.0-alpha.1"
   }
 }

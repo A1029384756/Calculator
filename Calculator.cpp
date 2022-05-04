@@ -103,7 +103,7 @@ double Calculator::solveExpression(std::string &input)
                 break;
 
             case DecimalStates::AFTER:
-                val = val + (double)(currentChar - '0') / (double)(10 * decimalPlaces);
+                val = val + (double)(currentChar - '0') / (double)(pow(10, decimalPlaces));
                 decimalPlaces++;
                 break;
             
