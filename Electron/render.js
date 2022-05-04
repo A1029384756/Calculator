@@ -95,3 +95,14 @@ divide.onclick = () => {
     textInput.value += '/';
 }
 //#endregion
+
+enter.onclick = () => {
+    console.log("SUBMITTED");
+    textInput.value = Module.calculate(textInput.value);
+}
+
+function handleForm(event) {
+    event.preventDefault();
+}
+
+textInput.addEventListener('submit', handleForm);

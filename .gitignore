@@ -1,2 +1,7 @@
 **/.vscode
+**/Electron/node_modules
+**/Electron_WASM
+**/hello_world_wasm
 Calculator
+calc.js
+calc.wasm

@@ -88,7 +88,7 @@ class Calculator {
                         val = val * 10 + parseInt(currerentChar);
                         break;
                     case "AFTER":
-                        val = (val + parseInt(currerentChar)) / (10 * decimalPlaces);
+                        val = val + parseInt(currerentChar) / (10 * decimalPlaces);
                         decimalPlaces++;
                         break;
                     default:
@@ -122,9 +122,9 @@ class Calculator {
                 if (this.priority[this.operationList[i].toString()] <= this.priority[previousOperator.toString()]) {
                     val1 = this.valueList[i - 1];
                     val2 = this.valueList[i];
-                    this.valueList.splice(i);
+                    this.valueList.splice(i, 1);
                     this.valueList[i - 1] = this.arithmetic(val1, val2, previousOperator);
-                    this.operationList.splice(i - 1);
+                    this.operationList.splice(i - 1, 1);
                 } else if (i === this.operationList.length - 1) {
                     val2 = this.valueList.at(-1);
                     this.valueList.pop();

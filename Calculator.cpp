@@ -44,7 +44,7 @@ double Calculator::arithmetic(double val1, double val2, char operation)
             break;
 
         case '^':
-            result = std::pow(val1, val2);
+            result = pow(val1, val2);
             break;
         
         default:

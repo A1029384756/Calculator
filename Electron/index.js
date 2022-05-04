@@ -8,6 +8,7 @@ const createWindow = () => {
         zoomToPageWidth: true,
         webPreferences: {
             nodeIntegration: true,
+            contextIsolation: false,
         }
     });
 
